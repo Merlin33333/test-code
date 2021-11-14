@@ -1,40 +1,58 @@
 <!-- Google fonts -->
+
 <head>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!-- <script type="text/javascript">
-        $(function() {
-            var cnt = 0;
-            var rdn= Math.floor((Math.random() * 1586897) + 54763);
-            var counter = setInterval(function() {
-                if (cnt < rdn) {
-                    $('#displayCounter').html(cnt);
-                    cnt++;
-                }
-                
-            }, 0.0001);
-        });
-    </script>
--->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </head>
 
-   <script>
-        var rdn= Math.floor((Math.random() * 1586897) + 54763);
+<script>
+    var rdn = Math.floor((Math.random() * 1586897) + 54763);
 
-       
-   </script>
+
+</script>
 
 
 <body class="spacer layer1">
-<a href="#" class="neon-button">Mein Profile</a>
 
-<a href="#" class="neon-button1">Social Media </a>
+<div class="navagation">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark bg-transparent">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Something</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+    <a href="#" class="neon-button">Mein Profile</a>
 
-<a href="#" class="neon-button2 timer">Memes </a>
+    <a href="#" class="neon-button1">Social Media </a>
+
+    <a href="#" class="neon-button2 timer">Memes </a>
 
 
 
@@ -54,60 +72,60 @@
 
 
 <script>
-(function($) {
-    $.fn.countTo = function(options) {
-        // merge the default plugin settings with the custom options
-        options = $.extend({}, $.fn.countTo.defaults, options || {});
+    (function ($) {
+        $.fn.countTo = function (options) {
+            // merge the default plugin settings with the custom options
+            options = $.extend({}, $.fn.countTo.defaults, options || {});
 
-        // how many times to update the value, and how much to increment the value on each update
-        var loops = Math.ceil(options.speed / options.refreshInterval),
-            increment = (options.to - options.from) / loops;
+            // how many times to update the value, and how much to increment the value on each update
+            var loops = Math.ceil(options.speed / options.refreshInterval),
+                increment = (options.to - options.from) / loops;
 
-        return $(this).each(function() {
-            var _this = this,
-                loopCount = 0,
-                value = options.from,
-                interval = setInterval(updateTimer, options.refreshInterval);
+            return $(this).each(function () {
+                var _this = this,
+                    loopCount = 0,
+                    value = options.from,
+                    interval = setInterval(updateTimer, options.refreshInterval);
 
-            function updateTimer() {
-                value += increment;
-                loopCount++;
-                $(_this).html(value.toFixed(options.decimals));
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+                    $(_this).html(value.toFixed(options.decimals));
 
-                if (typeof(options.onUpdate) == 'function') {
-                    options.onUpdate.call(_this, value);
-                }
+                    if (typeof (options.onUpdate) == 'function') {
+                        options.onUpdate.call(_this, value);
+                    }
 
-                if (loopCount >= loops) {
-                    clearInterval(interval);
-                    value = options.to;
+                    if (loopCount >= loops) {
+                        clearInterval(interval);
+                        value = options.to;
 
-                    if (typeof(options.onComplete) == 'function') {
-                        options.onComplete.call(_this, value);
+                        if (typeof (options.onComplete) == 'function') {
+                            options.onComplete.call(_this, value);
+                        }
                     }
                 }
-            }
-        });
-    };
+            });
+        };
 
-    $.fn.countTo.defaults = {
-        from: 0,  // the number the element should start at
-        to: 100,  // the number the element should end at
-        speed: 1000,  // how long it should take to count between the target numbers
-        refreshInterval: 100,  // how often the element should be updated
-        decimals: 0,  // the number of decimal places to show
-        onUpdate: null,  // callback method for every time the element is updated,
-        onComplete: null,  // callback method for when the element finishes updating
-    };
-})(jQuery);
+        $.fn.countTo.defaults = {
+            from: 0,  // the number the element should start at
+            to: 100,  // the number the element should end at
+            speed: 1000,  // how long it should take to count between the target numbers
+            refreshInterval: 100,  // how often the element should be updated
+            decimals: 0,  // the number of decimal places to show
+            onUpdate: null,  // callback method for every time the element is updated,
+            onComplete: null,  // callback method for when the element finishes updating
+        };
+    })(jQuery);
 
-jQuery(function($) {
+    jQuery(function ($) {
         $('.timer').countTo({
             from: 50,
             to: rdn,
             speed: 1000,
             refreshInterval: 50,
-            onComplete: function(value) {
+            onComplete: function (value) {
                 console.debug(this);
             }
         });
